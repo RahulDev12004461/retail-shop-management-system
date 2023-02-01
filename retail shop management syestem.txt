@@ -1,0 +1,149 @@
+CODES
+Table-1
+create table Seats
+(
+seat_no varchar(5) primary key,
+seat_column number,
+seat_row number
+)
+insert into Seats values('A1',1,1);
+insert into Seats values('B2',2,1);
+insert into Seats values('C3',3,1);
+insert into Seats values('D4',4,1);
+insert into Seats values('E5',5,1);
+insert into Seats values('F1',1,2);
+insert into Seats values('G2',2,2);
+insert into Seats values('H3',3,2);
+insert into Seats values('I4',4,2);
+insert into Seats values('J5',5,2)
+select * from Seats
+drop table seats
+describe seats
+
+TABLE 2-
+create table Movies
+(
+Movie_id varchar(5) primary key,
+Director char(40),
+Movie_name char(40)
+)
+insert into Movies values('10f','Prabhu Deva','Rowdy Rathore');
+insert into Movies values('20g','Sidharth Anand','Bang Bang');
+insert into Movies values('30h','Karan Johar','Kabhi Khushi Kabhi Gham');
+insert into Movies values('40i','Aditya Dhar','URI');
+insert into Movies values('50j','Alan Taylor','Thor');
+insert into Movies values('60k','Ryan Coogler','Black Panther');
+select*from Movies;
+drop table Movies;
+describe Movies;
+
+TABLE 3-
+Create table show
+(
+Show_id varchar(5),
+Start_time varchar(9),
+End_time varchar(9)
+)
+insert into show values('f1','2.00pm','4.30pm');
+insert into show values('f2','5.00pm','7.30pm');
+insert into show values('f3','8.00pm','10.30pm');
+insert into show values('f4','11.00pm','1.30am');
+select*from show;
+drop table show;
+describe show;
+
+TABLE 4-
+create table viewer
+(
+name char(30),
+age number,
+viewer_id varchar(50),
+email_id varchar(100) primary key
+)
+Insert into viewer values('Sudhanshu',20,'gy2','modisudhanshu@gmail.com');
+Insert into viewer values('Rahul',19,'ln7','devrahul@gmail.com');
+Insert into viewer values('Ishan',22,'lh3','ishanchaudharygmail.com');
+Insert into viewer values('Sanskar',18,'bs3','urboysanskar@gmail.com');
+select*from viewer;
+drop table viewer;
+describe viewer;
+TABLE 5-
+create table tickets
+(
+seat_no varchar(10),
+price number,
+ticket_no number primary key
+)
+insert into tickets values('B212',300,110);
+insert into tickets values('A112',300,120);
+insert into tickets values('B211',300,125);
+insert into tickets values('G212',300,115);
+insert into tickets values('G211',300,130);
+insert into tickets values('A112',300,220);
+insert into tickets values('B211',300,225);
+insert into tickets values('G212',300,210);
+insert into tickets values('G211',300,230);
+insert into tickets values('G211',300,240);
+select*from tickets;
+drop table tickets;
+describe tickets;
+TABLE 6-
+create table payment
+(
+payment_id varchar(10) primary key,
+payment_type char(6),
+amount number
+)
+insert into payment values('p1','online',300);
+insert into payment values('p2','online',200);
+insert into payment values('p3','cash',200);
+insert into payment values('p4','online',310);
+insert into payment values('p5','cash',200);
+insert into payment values('p6','online',330);
+drop table payment;
+describe payment;
+
+QUERIES(PERFORMED WITH DDL AND DML) :
+select * from employee where emp_id =3---normal select statement using where
+select distinct salary from employee ---every distinct element present in the table
+select f_name from employee where salary >7500 and joined_year>=2015
+alter table customer add(quantity number)
+alter table employee rename column emp_id to e_id;
+alter table customer modify(c_id varchar);
+alter table employee drop(joined_year);
+truncate table products
+select count (p_name) from products
+select avg(salary) from employee
+select max(salary) from employee
+alter table customer drop(feedback);
+UPDATE customer SET c_name = 'Rahul' WHERE c_id = ‘99' ;
+delete from customer where c_id=102;
+select min(price) from product
+
+
+PLSQL:
+declare
+name char(20);
+age number;
+email varchar(30);
+procedure update_CMS(i in char, f in number, e in varchar) is
+begin
+insert into CMS values(i,f,e);
+end update_CMS ;
+begin
+name:=:Name;
+age:=:Age;
+email:=:email;
+update_CMS(name,age,email);
+end
+
+
+
+
+
+
+
+
+
+
+
